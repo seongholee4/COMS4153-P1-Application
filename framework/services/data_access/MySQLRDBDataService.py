@@ -40,6 +40,7 @@ class MySQLRDBDataService(DataDataService):
                         f"where {key_field}=%s"
             connection = self._get_connection()
             cursor = connection.cursor()
+            print("get_data_object(): key_value = ", key_value)
             cursor.execute(sql_statement, [key_value])
             result = cursor.fetchone()
         except Exception as e:
